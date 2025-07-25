@@ -69,7 +69,7 @@ const Hero = () => {
             <div className="relative">
               <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden glow-effect hover-lift">
                 <img
-                  src={profilePhoto}
+                  src="/lovable-uploads/70f1542a-2b89-4f98-bc32-0963109eae92.png"
                   alt="Gallage Kaveesha Nethmi"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
