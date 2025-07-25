@@ -15,41 +15,41 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-20">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left Content */}
-          <div className="flex-1 text-center lg:text-left fade-in">
+          <div className="flex-1 text-center lg:text-left slide-in-left">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="text-muted-foreground">Hello, I'm</span>
+              <span className="text-muted-foreground fade-in stagger-1">Hello, I'm</span>
               <br />
-              <span className="text-primary glow-text">Gallage Kaveesha</span>
+              <span className="text-primary glow-text fade-in stagger-2 hover-glow">Gallage Kaveesha</span>
               <br />
-              <span className="text-foreground">Nethmi</span>
+              <span className="text-foreground fade-in stagger-3">Nethmi</span>
             </h1>
             
-            <h2 className="text-xl md:text-2xl text-muted-foreground mb-6 font-medium">
+            <h2 className="text-xl md:text-2xl text-muted-foreground mb-6 font-medium fade-in stagger-4">
               Full Stack Developer | UI/UX Designer
             </h2>
 
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl leading-relaxed fade-in stagger-5">
               I am a detail-oriented IT undergraduate specializing in Full Stack Development with proven expertise in designing and implementing user-centered solutions. Passionate about solving complex problems and delivering reliable results.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button size="lg" className="hero-gradient text-white font-semibold">
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 fade-in stagger-6">
+              <Button size="lg" className="hero-gradient text-white font-semibold shimmer hover-lift">
                 <Mail className="w-5 h-5 mr-2" />
                 Let's Talk
               </Button>
-              <Button variant="outline" size="lg" className="group">
+              <Button variant="outline" size="lg" className="group hover-lift">
                 <Download className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                 Download CV
               </Button>
             </div>
 
             {/* Social Links */}
-            <div className="flex justify-center lg:justify-start gap-4">
+            <div className="flex justify-center lg:justify-start gap-4 slide-up stagger-6">
               <a
                 href="https://github.com/GK-NETHMI"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full glass-card hover:text-primary transition-colors"
+                className="p-3 rounded-full glass-card hover:text-primary transition-colors hover-glow stagger-1"
               >
                 <Github className="w-5 h-5" />
               </a>
@@ -57,7 +57,7 @@ const Hero = () => {
                 href="https://www.linkedin.com/in/kaveesha-nethmi-131519215"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full glass-card hover:text-primary transition-colors"
+                className="p-3 rounded-full glass-card hover:text-primary transition-colors hover-glow stagger-2"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
@@ -65,18 +65,18 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Profile Image */}
-          <div className="flex-1 flex justify-center lg:justify-end scale-in">
+          <div className="flex-1 flex justify-center lg:justify-end slide-in-right">
             <div className="relative">
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden profile-glow">
+              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden glow-effect hover-lift">
                 <img
                   src={profilePhoto}
                   alt="Gallage Kaveesha Nethmi"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 hero-gradient rounded-full opacity-70 blur-xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 hero-gradient rounded-full opacity-50 blur-lg"></div>
+              <div className="absolute -top-4 -right-4 w-20 h-20 hero-gradient rounded-full opacity-70 blur-xl float"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 hero-gradient rounded-full opacity-50 blur-lg float" style={{animationDelay: '1s'}}></div>
             </div>
           </div>
         </div>

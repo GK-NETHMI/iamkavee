@@ -37,18 +37,18 @@ const Services = () => {
   return (
     <section id="services" className="py-20 bg-secondary/20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            My <span className="text-primary">Services</span>
+        <div className="text-center mb-16 fade-in">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 slide-up stagger-1">
+            My <span className="text-primary glow-text">Services</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto slide-up stagger-2">
             I offer comprehensive digital solutions to help bring your ideas to life
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="glass-card group hover:scale-105 transition-all duration-300 scale-in">
+            <Card key={index} className={`glass-card group hover-lift transition-all duration-300 scale-in stagger-${index + 1}`}>
               <CardContent className="p-8">
                 <div className="mb-6">
                   <div className={`w-16 h-16 rounded-lg bg-gradient-to-r ${service.color} flex items-center justify-center text-white mb-4`}>
