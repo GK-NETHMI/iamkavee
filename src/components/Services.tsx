@@ -72,6 +72,7 @@ const Services = () => {
                 <Button 
                   variant="ghost" 
                   className="group/btn text-primary hover:text-primary hover:bg-primary/10 p-0"
+                  onClick={() => window.open('https://wa.me/94701415365', '_blank')}
                 >
                   Get Started
                   <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
@@ -88,7 +89,11 @@ const Services = () => {
             <p className="text-muted-foreground mb-6">
               Let's collaborate to create something amazing together. I'm here to help bring your vision to reality.
             </p>
-            <Button size="lg" className="hero-gradient text-white font-semibold">
+            <Button 
+              size="lg" 
+              className="hero-gradient text-white font-semibold"
+              onClick={() => window.open('https://wa.me/94701415365', '_blank')}
+            >
               Let's Discuss Your Project
             </Button>
           </div>

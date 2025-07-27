@@ -1,76 +1,99 @@
-import { ExternalLink, Github, Star } from "lucide-react";
+import { Github, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+
+// Import project images
+import salonManagement from "@/assets/salon-management.jpg";
+import paddySales from "@/assets/paddy-sales.jpg";
+import lifeInsurance from "@/assets/life-insurance.jpg";
+import onlineGrocery from "@/assets/online-grocery.jpg";
 
 const Portfolio = () => {
   const projects = [
     {
       title: "Salon Management System",
-      description: "A comprehensive salon management platform with appointment booking, customer management, and service tracking features.",
+      description: "Designed and developed a salon management platform featuring online appointment booking, service/pricing management, and an admin dashboard. Integrated secure payment gateway and email notification system.",
       technologies: ["React", "Node.js", "MongoDB", "Express.js"],
       category: "Full Stack",
-      featured: true
-    },
-    {
-      title: "Paddy Sales Management App",
-      description: "Mobile application for paddy farmers to manage sales, track inventory, and connect with buyers directly.",
-      technologies: ["React Native", "Firebase", "Node.js"],
-      category: "Mobile App",
-      featured: true
-    },
-    {
-      title: "Life Insurance Website",
-      description: "Modern and responsive website for life insurance company with policy management and customer portal.",
-      technologies: ["React", "CSS3", "JavaScript", "REST API"],
-      category: "Web Development",
-      featured: false
-    },
-    {
-      title: "Online Grocery System",
-      description: "E-commerce platform for grocery shopping with real-time inventory, order tracking, and payment integration.",
-      technologies: ["React", "Spring Boot", "MySQL", "PayPal API"],
-      category: "E-commerce",
-      featured: true
-    },
-    {
-      title: "Online Pharmacy System",
-      description: "Digital pharmacy platform with prescription management, medicine catalog, and delivery tracking.",
-      technologies: ["React", "Node.js", "MongoDB", "Express.js"],
-      category: "Healthcare",
-      featured: false
-    },
-    {
-      title: "AI Home Inventory Platform",
-      description: "Smart home inventory management system using AI for automatic item recognition and tracking.",
-      technologies: ["Python", "TensorFlow", "React", "MongoDB"],
-      category: "AI/ML",
-      featured: true
+      featured: true,
+      image: salonManagement
     },
     {
       title: "Meal Planning Social Platform",
-      description: "Social platform for meal planning and recipe sharing with nutritional tracking and community features.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Socket.io"],
+      description: "Built a web-based social platform to support healthy lifestyles through meal planning, progress tracking, and community interaction. Custom meal plans, post sharing, achievements, notifications, messaging, and user interaction tools (likes, comments, follow system).",
+      technologies: ["React", "Spring Boot", "PostgreSQL", "Socket.io"],
       category: "Social Platform",
-      featured: false
+      featured: true,
+      image: "/lovable-uploads/f82584b3-bb62-4385-8a53-0328198c9a0d.png"
     },
     {
-      title: "Note App",
-      description: "Feature-rich note-taking application with cloud sync, markdown support, and collaborative editing.",
-      technologies: ["React", "Firebase", "CSS3"],
-      category: "Productivity",
-      featured: false
+      title: "AI Home Inventory Platform",
+      description: "A smart home inventory tracking website that helps users manage their belongings, analyze budgets with AI, and get personalized purchase suggestions. AI-powered inventory management, budget tracking, smart shopping recommendations, online grocery shopping, and home repair services.",
+      technologies: ["React", "Spring Boot", "Python", "TensorFlow"],
+      category: "AI/ML",
+      featured: true,
+      image: "/lovable-uploads/67a6e798-da12-4e43-b373-d4f8b088862e.png"
+    },
+    {
+      title: "Paddy Sales Management App",
+      description: "Created a streamlined web application for paddy sales with inventory management, role-based user access, and real-time tracking. Implemented customer reviews and ratings system.",
+      technologies: ["React", "Node.js", "MongoDB", "Express.js"],
+      category: "Full Stack",
+      featured: true,
+      image: paddySales
+    },
+    {
+      title: "Life Insurance Website",
+      description: "Developed a dynamic website for life insurance services with policy search, online applications, and customer portals. Integrated admin panels for agents to track applications.",
+      technologies: ["PHP", "Java", "JavaScript", "MySQL"],
+      category: "Web Development",
+      featured: false,
+      image: lifeInsurance
+    },
+    {
+      title: "Online Grocery System",
+      description: "Built an e-commerce platform for groceries with search filters, product catalogs, and a shopping cart system. Designed admin inventory management tools.",
+      technologies: ["HTML", "PHP", "CSS", "MySQL"],
+      category: "E-commerce",
+      featured: true,
+      image: onlineGrocery
+    },
+    {
+      title: "Online Pharmacy System",
+      description: "Web-based platform for purchasing medications and managing pharmacy inventory with prescription management and delivery tracking.",
+      technologies: ["React", "Node.js", "MongoDB", "Express.js"],
+      category: "Healthcare",
+      featured: false,
+      image: "/lovable-uploads/41a80b36-d550-425f-9c72-2c831fa4b0f3.png"
+    },
+    {
+      title: "Event Manager Platform",
+      description: "An intuitive event management platform designed to help users plan, organize, and manage events effortlessly. From guest registration to real-time updates, our site simplifies every step of the event journey.",
+      technologies: ["Figma", "UI/UX Design"],
+      category: "Design",
+      featured: false,
+      image: "/lovable-uploads/b1aa689b-a52b-4920-a3d5-2a78b00a5b0d.png"
     },
     {
       title: "Bloodcare App",
-      description: "Healthcare application for blood donation management with donor registration and hospital integration.",
-      technologies: ["React Native", "Node.js", "MySQL"],
-      category: "Healthcare",
-      featured: false
+      description: "Developing a mobile app to connect blood banks, donors, and users for effective blood donation coordination. Location-based blood requests and donor matching system.",
+      technologies: ["Kotlin", "SQLite"],
+      category: "Mobile App",
+      featured: false,
+      image: "/lovable-uploads/f33f584a-15e4-46f8-82fd-d940fc200b1d.png"
+    },
+    {
+      title: "Note App",
+      description: "Task manager app with features for creating, editing, and storing tasks persistently with intuitive mobile interface.",
+      technologies: ["Kotlin", "SQLite"],
+      category: "Mobile App",
+      featured: false,
+      image: "/lovable-uploads/8ee1b9d0-beec-4924-8987-925ece18c3e3.png"
     }
   ];
 
-  const categories = ["All", "Full Stack", "Mobile App", "Web Development", "E-commerce", "Healthcare", "AI/ML", "Social Platform", "Productivity"];
+  const categories = ["All", "Full Stack", "Mobile App", "Web Development", "E-commerce", "Healthcare", "AI/ML", "Social Platform", "Design"];
 
   return (
     <section id="portfolio" className="py-20">
@@ -103,14 +126,20 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <Card key={index} className="glass-card group hover:scale-105 transition-all duration-300 scale-in">
               <CardContent className="p-0">
-                {/* Project Image Placeholder */}
-                <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 relative overflow-hidden rounded-t-lg">
+                {/* Project Image */}
+                <div className="h-48 relative overflow-hidden rounded-t-lg">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                    <Button size="sm" variant="secondary" className="bg-white/20 backdrop-blur-sm">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </Button>
-                    <Button size="sm" variant="secondary" className="bg-white/20 backdrop-blur-sm">
+                    <Button 
+                      size="sm" 
+                      variant="secondary" 
+                      className="bg-white/20 backdrop-blur-sm"
+                      onClick={() => window.open('https://github.com/GK-NETHMI', '_blank')}
+                    >
                       <Github className="w-4 h-4 mr-2" />
                       Code
                     </Button>
@@ -133,7 +162,7 @@ const Portfolio = () => {
                     </Badge>
                   </div>
                   
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                  <p className="text-muted-foreground text-sm mb-4">
                     {project.description}
                   </p>
 
