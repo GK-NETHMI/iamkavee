@@ -1,17 +1,16 @@
 import { ChevronDown, Download, Mail, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.jpg";
-
 const Hero = () => {
   const scrollToAbout = () => {
     const element = document.getElementById("about");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
-
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative pt-16">
+  return <section id="home" className="min-h-screen flex items-center justify-center relative pt-16">
       <div className="container mx-auto px-4 py-20">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left Content */}
@@ -28,16 +27,10 @@ const Hero = () => {
               Full Stack Developer | UI/UX Designer
             </h2>
 
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl leading-relaxed fade-in stagger-5">
-              I am a detail-oriented IT undergraduate specializing in Full Stack Development with proven expertise in designing and implementing user-centered solutions. Passionate about solving complex problems and delivering reliable results.
-            </p>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl leading-relaxed fade-in stagger-5">Creative web developer with a passion for clean design and smooth user experiences. I build responsive, functional websites from frontend to backend with care and curiosity.</p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8 fade-in stagger-6">
-              <Button 
-                size="lg" 
-                className="hero-gradient text-white font-semibold shimmer hover-lift"
-                onClick={() => window.open('https://wa.me/94701415365', '_blank')}
-              >
+              <Button size="lg" className="hero-gradient text-white font-semibold shimmer hover-lift" onClick={() => window.open('https://wa.me/94701415365', '_blank')}>
                 <Mail className="w-5 h-5 mr-2" />
                 Let's Talk
               </Button>
@@ -49,30 +42,15 @@ const Hero = () => {
 
             {/* Social Links */}
             <div className="flex justify-center lg:justify-start gap-4 slide-up stagger-6">
-              <a
-                href="https://github.com/GK-NETHMI"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full glass-card hover:text-primary transition-colors hover-glow stagger-1"
-              >
+              <a href="https://github.com/GK-NETHMI" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full glass-card hover:text-primary transition-colors hover-glow stagger-1">
                 <Github className="w-5 h-5" />
               </a>
-              <a
-                href="https://www.linkedin.com/in/kaveesha-nethmi-131519215"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full glass-card hover:text-primary transition-colors hover-glow stagger-2"
-              >
+              <a href="https://www.linkedin.com/in/kaveesha-nethmi-131519215" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full glass-card hover:text-primary transition-colors hover-glow stagger-2">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a
-                href="https://www.facebook.com/kaveesha.nethmi.128131/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full glass-card hover:text-primary transition-colors hover-glow stagger-3"
-              >
+              <a href="https://www.facebook.com/kaveesha.nethmi.128131/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full glass-card hover:text-primary transition-colors hover-glow stagger-3">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
               </a>
             </div>
@@ -82,25 +60,20 @@ const Hero = () => {
           <div className="flex-1 flex justify-center lg:justify-end slide-in-right">
             <div className="relative">
               <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden glow-effect hover-lift">
-                <img
-                  src="/lovable-uploads/70f1542a-2b89-4f98-bc32-0963109eae92.png"
-                  alt="Gallage Kaveesha Nethmi"
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                />
+                <img src="/lovable-uploads/70f1542a-2b89-4f98-bc32-0963109eae92.png" alt="Gallage Kaveesha Nethmi" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
               </div>
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-20 h-20 hero-gradient rounded-full opacity-70 blur-xl float"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 hero-gradient rounded-full opacity-50 blur-lg float" style={{animationDelay: '1s'}}></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 hero-gradient rounded-full opacity-50 blur-lg float" style={{
+              animationDelay: '1s'
+            }}></div>
             </div>
           </div>
         </div>
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <button
-            onClick={scrollToAbout}
-            className="animate-bounce p-2 rounded-full glass-card hover:text-primary transition-colors"
-          >
+          <button onClick={scrollToAbout} className="animate-bounce p-2 rounded-full glass-card hover:text-primary transition-colors">
             <ChevronDown className="w-6 h-6" />
           </button>
         </div>
@@ -112,8 +85,6 @@ const Hero = () => {
         <div className="absolute top-1/3 right-20 w-1 h-1 bg-primary rounded-full opacity-80"></div>
         <div className="absolute bottom-1/4 left-1/4 w-1.5 h-1.5 bg-primary rounded-full opacity-70"></div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
