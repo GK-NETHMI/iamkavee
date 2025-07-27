@@ -153,12 +153,6 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* View More */}
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg">
-            View More Projects
-          </Button>
-        </div>
       </div>
     </section>
   );
