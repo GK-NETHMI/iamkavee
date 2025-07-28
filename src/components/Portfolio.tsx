@@ -1,15 +1,20 @@
-import { Github, Star } from "lucide-react";
+import { Github, Star, ChevronDown } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 
 // Import project images
 import salonManagement from "@/assets/salon-management.jpg";
 import paddySales from "@/assets/paddy-sales.jpg";
 import lifeInsurance from "@/assets/life-insurance.jpg";
 import onlineGrocery from "@/assets/online-grocery.jpg";
+import noteApp from "@/assets/note-app.jpg";
+import bloodcareApp from "@/assets/bloodcare-app.jpg";
 
 const Portfolio = () => {
+  const [showAll, setShowAll] = useState(false);
+  
   const projects = [
     {
       title: "Salon Management System",
@@ -73,7 +78,8 @@ const Portfolio = () => {
       technologies: ["Figma", "UI/UX Design"],
       category: "Design",
       featured: false,
-      image: "/lovable-uploads/b1aa689b-a52b-4920-a3d5-2a78b00a5b0d.png"
+      image: "/lovable-uploads/b1aa689b-a52b-4920-a3d5-2a78b00a5b0d.png",
+      isDesign: true
     },
     {
       title: "Bloodcare App",
@@ -81,7 +87,7 @@ const Portfolio = () => {
       technologies: ["Kotlin", "SQLite"],
       category: "Mobile App",
       featured: false,
-      image: "/lovable-uploads/f33f584a-15e4-46f8-82fd-d940fc200b1d.png"
+      image: bloodcareApp
     },
     {
       title: "Note App",
@@ -89,56 +95,49 @@ const Portfolio = () => {
       technologies: ["Kotlin", "SQLite"],
       category: "Mobile App",
       featured: false,
-      image: "/lovable-uploads/8ee1b9d0-beec-4924-8987-925ece18c3e3.png"
+      image: noteApp
     }
   ];
 
-  const categories = ["All", "Full Stack", "Mobile App", "Web Development", "E-commerce", "Healthcare", "AI/ML", "Social Platform", "Design"];
+  const displayedProjects = showAll ? projects : projects.slice(0, 5);
 
   return (
     <section id="portfolio" className="py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            My <span className="text-primary">Portfolio</span>
+            My <span className="text-primary">Projects</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A showcase of my recent projects and technical achievements
           </p>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {categories.map((category, index) => (
-            <Button
-              key={index}
-              variant={index === 0 ? "default" : "outline"}
-              size="sm"
-              className={index === 0 ? "hero-gradient text-white" : ""}
-            >
-              {category}
-            </Button>
-          ))}
-        </div>
-
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {displayedProjects.map((project, index) => (
             <Card key={index} className="glass-card group hover:scale-105 transition-all duration-300 scale-in">
               <CardContent className="p-0">
                 {/* Project Image */}
-                <div className="h-48 relative overflow-hidden rounded-t-lg">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
+                  <div className="h-48 relative overflow-hidden rounded-t-lg bg-gradient-to-br from-background to-muted">
+                  <div className="absolute inset-0 flex items-center justify-center p-4">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="max-w-[80%] max-h-[80%] object-contain rounded-lg shadow-lg"
+                    />
+                  </div>
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                     <Button 
                       size="sm" 
                       variant="secondary" 
                       className="bg-white/20 backdrop-blur-sm"
-                      onClick={() => window.open('https://github.com/GK-NETHMI', '_blank')}
+                      onClick={() => window.open(
+                        project.isDesign 
+                          ? 'https://www.figma.com/design/fj5kMrgOOOo8zF4LYXCc0J/Event-Management-Web?node-id=0-1&t=UQeP8UH2RRETykmC-1'
+                          : 'https://github.com/GK-NETHMI', 
+                        '_blank'
+                      )}
                     >
                       <Github className="w-4 h-4 mr-2" />
                       Code
@@ -181,6 +180,20 @@ const Portfolio = () => {
             </Card>
           ))}
         </div>
+
+        {/* View More Button */}
+        {!showAll && projects.length > 5 && (
+          <div className="text-center">
+            <Button 
+              onClick={() => setShowAll(true)}
+              variant="outline"
+              className="hover-scale animate-fade-in"
+            >
+              View More Projects
+              <ChevronDown className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+        )}
 
       </div>
     </section>

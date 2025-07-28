@@ -1,19 +1,15 @@
 import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Contact from "@/components/Contact";
+import Portfolio from "@/components/Portfolio";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+const ProjectsPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground custom-scrollbar">
       <Navigation />
-      <Hero />
-      <Services />
-      <Contact />
+      <Portfolio />
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default ProjectsPage;

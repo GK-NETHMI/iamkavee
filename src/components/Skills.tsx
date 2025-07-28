@@ -52,17 +52,17 @@ const Skills = () => {
     {
       icon: <Code className="w-8 h-8" />,
       title: "Frontend Development",
-      skills: ["HTML", "CSS", "JavaScript", "React", "Figma"]
+      skills: ["HTML", "CSS", "JavaScript", "React", "Kotlin"]
     },
     {
       icon: <Database className="w-8 h-8" />,
       title: "Backend Development",
-      skills: ["Node.js", "Express.js", "Spring Boot", "MySQL", "MongoDB"]
+      skills: ["Node.js", "Express.js", "Spring Boot", "MySQL", "MongoDB", "PHP"]
     },
     {
       icon: <Palette className="w-8 h-8" />,
       title: "Design & Tools",
-      skills: ["UI/UX Design", "Figma", "Power BI", "Responsive Design"]
+      skills: ["Framer", "Figma", "Power BI", "Canva", "WebFlow"]
     }
   ];
 
@@ -110,38 +110,29 @@ const Skills = () => {
               Technical Skills
             </h3>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {technicalSkills.map((skill, index) => (
-                <Card key={index} className={`glass-card hover-lift stagger-${(index % 6) + 1} group`}>
+                <Card key={index} className={`glass-card hover-lift stagger-${(index % 6) + 1} group hover:scale-110 transition-all duration-300`}>
                   <CardContent className="p-4 text-center">
-                    <div className="relative w-16 h-16 mx-auto mb-3">
-                      <svg className="w-16 h-16 transform -rotate-90" viewBox="0 0 64 64">
-                        <circle
-                          cx="32"
-                          cy="32"
-                          r="28"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                          className="text-muted opacity-20"
-                        />
-                        <circle
-                          cx="32"
-                          cy="32"
-                          r="28"
-                          fill="none"
-                          stroke="url(#gradient)"
-                          strokeWidth="4"
-                          strokeLinecap="round"
-                          strokeDasharray={`${(skill.level / 100) * 175.9} 175.9`}
-                          className="transition-all duration-1000 ease-out"
-                        />
-                      </svg>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-xs font-bold text-primary">{skill.level}%</span>
-                      </div>
+                    <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                      {/* Language Icons */}
+                      {skill.name === "HTML" && <div className="text-2xl">🌐</div>}
+                      {skill.name === "CSS" && <div className="text-2xl">🎨</div>}
+                      {skill.name === "JavaScript" && <div className="text-2xl">⚡</div>}
+                      {skill.name === "React" && <div className="text-2xl">⚛️</div>}
+                      {skill.name === "Node.js" && <div className="text-2xl">🟢</div>}
+                      {skill.name === "Express.js" && <div className="text-2xl">🚀</div>}
+                      {skill.name === "Spring Boot" && <div className="text-2xl">🍃</div>}
+                      {skill.name === "MySQL" && <div className="text-2xl">🐬</div>}
+                      {skill.name === "MongoDB" && <div className="text-2xl">🍃</div>}
+                      {skill.name === "Java" && <div className="text-2xl">☕</div>}
+                      {skill.name === "Python" && <div className="text-2xl">🐍</div>}
+                      {skill.name === "C/C++" && <div className="text-2xl">⚙️</div>}
+                      {skill.name === "Figma" && <div className="text-2xl">🎯</div>}
+                      {skill.name === "Power BI" && <div className="text-2xl">📊</div>}
+                      {skill.name === "Kotlin" && <div className="text-2xl">📱</div>}
                     </div>
-                    <h4 className="font-medium text-sm group-hover:text-primary transition-colors">
+                    <h4 className="font-medium text-xs group-hover:text-primary transition-colors">
                       {skill.name}
                     </h4>
                   </CardContent>

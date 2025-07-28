@@ -34,7 +34,12 @@ const Hero = () => {
                 <Mail className="w-5 h-5 mr-2" />
                 Let's Talk
               </Button>
-              <Button variant="outline" size="lg" className="group hover-lift">
+              <Button variant="outline" size="lg" className="group hover-lift" onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/cv.pdf';
+                link.download = 'G_K_NETHMI_CV.pdf';
+                link.click();
+              }}>
                 <Download className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                 Download CV
               </Button>
