@@ -12,9 +12,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="text-center md:text-left">
             <p className="text-muted-foreground flex items-center gap-2">
-              © 2025 Gallage Kaveesha Nethmi. Made with{" "}
-              <Heart className="w-4 h-4 text-primary" fill="currentColor" />
-              using React & TypeScript
+              © 2025 Gallage Kaveesha Nethmi.
             </p>
           </div>
 

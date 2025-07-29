@@ -36,9 +36,11 @@ const Hero = () => {
               </Button>
               <Button variant="outline" size="lg" className="group hover-lift" onClick={() => {
                 const link = document.createElement('a');
-                link.href = '/cv.pdf';
-                link.download = 'G_K_NETHMI_CV.pdf';
+                link.href = '/cv-generated.pdf';
+                link.download = 'Gallage_Kaveesha_Nethmi_CV.pdf';
+                document.body.appendChild(link);
                 link.click();
+                document.body.removeChild(link);
               }}>
                 <Download className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                 Download CV

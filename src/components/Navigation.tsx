@@ -55,14 +55,7 @@ const Navigation = () => {
             <a href="/" className="nav-link hover:scale-105 transition-transform">Home</a>
             <a href="/about" className="nav-link hover:scale-105 transition-transform">About</a>
             <a href="/skills" className="nav-link hover:scale-105 transition-transform">Skills</a>
-            <a href="/#services" className="nav-link hover:scale-105 transition-transform" onClick={(e) => {
-              e.preventDefault();
-              if (window.location.pathname === '/') {
-                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-              } else {
-                window.location.href = '/#services';
-              }
-            }}>Services</a>
+            <a href="/services" className="nav-link hover:scale-105 transition-transform">Services</a>
             <a href="/projects" className="nav-link hover:scale-105 transition-transform">Projects</a>
             <a href="/#contact" className="nav-link hover:scale-105 transition-transform" onClick={(e) => {
               e.preventDefault();
@@ -89,15 +82,7 @@ const Navigation = () => {
             <a href="/" className="nav-link-mobile">Home</a>
             <a href="/about" className="nav-link-mobile">About</a>
             <a href="/skills" className="nav-link-mobile">Skills</a>
-            <a href="/#services" className="nav-link-mobile" onClick={(e) => {
-              e.preventDefault();
-              setIsOpen(false);
-              if (window.location.pathname === '/') {
-                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-              } else {
-                window.location.href = '/#services';
-              }
-            }}>Services</a>
+            <a href="/services" className="nav-link-mobile" onClick={() => setIsOpen(false)}>Services</a>
             <a href="/projects" className="nav-link-mobile">Projects</a>
             <a href="/#contact" className="nav-link-mobile" onClick={(e) => {
               e.preventDefault();

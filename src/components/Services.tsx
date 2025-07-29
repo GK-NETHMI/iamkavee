@@ -82,22 +82,6 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="max-w-2xl mx-auto">
-            <h3 className="text-2xl font-semibold mb-4">Ready to Start Your Project?</h3>
-            <p className="text-muted-foreground mb-6">
-              Let's collaborate to create something amazing together. I'm here to help bring your vision to reality.
-            </p>
-            <Button 
-              size="lg" 
-              className="hero-gradient text-white font-semibold"
-              onClick={() => window.open('https://wa.me/94701415365', '_blank')}
-            >
-              Let's Discuss Your Project
-            </Button>
-          </div>
-        </div>
       </div>
     </section>
   );
