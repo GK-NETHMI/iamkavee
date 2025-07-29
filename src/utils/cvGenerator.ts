@@ -32,7 +32,7 @@ export const generateCV = () => {
   doc.setTextColor(...darkColor);
   doc.setFontSize(10);
   const contactInfo = [
-    'Email: kaveeshanethmi2002@gmail.com',
+    'Email: nethmikavee40@gmail.com',
     'Phone: +94 701 415 365',
     'Location: Sri Lanka',
     'LinkedIn: linkedin.com/in/kaveesha-nethmi-131519215',
@@ -84,6 +84,64 @@ export const generateCV = () => {
     doc.setFont('helvetica', 'normal');
     doc.text(skillList.join(', '), 60, yPosition);
     yPosition += 6;
+  });
+
+  yPosition += 10;
+
+  // Work Experience
+  doc.setTextColor(...primaryColor);
+  doc.setFontSize(16);
+  doc.setFont('helvetica', 'bold');
+  doc.text('WORK EXPERIENCE', 20, yPosition);
+  yPosition += 10;
+
+  const workExperience = [
+    {
+      title: 'Freelance Full Stack Developer',
+      company: 'Remote | 2022 – Present',
+      responsibilities: [
+        'Designing and developing responsive websites for clients using HTML, CSS, JavaScript, and MERN',
+        'Customizing UI/UX designs and integrating backend functionalities for dynamic web applications',
+        'Collaborating with clients to understand business needs and deliver tailored digital solutions'
+      ]
+    },
+    {
+      title: 'Junior Web Developer – Leogn (Pvt) Ltd',
+      company: 'Colombo, Sri Lanka | Feb 2025 – May 2025',
+      responsibilities: [
+        'Contributed to the development of client-facing websites and internal tools',
+        'Maintained and updated existing websites using modern tech stacks',
+        'Gained practical experience working in an agile environment with designers and senior developers'
+      ]
+    }
+  ];
+
+  doc.setTextColor(...darkColor);
+  doc.setFontSize(10);
+
+  workExperience.forEach((job) => {
+    if (yPosition > 250) {
+      doc.addPage();
+      yPosition = 20;
+    }
+    
+    doc.setFont('helvetica', 'bold');
+    doc.text(job.title, 20, yPosition);
+    yPosition += 5;
+    
+    doc.setFont('helvetica', 'italic');
+    doc.setTextColor(...lightColor);
+    doc.text(job.company, 20, yPosition);
+    doc.setTextColor(...darkColor);
+    yPosition += 5;
+    
+    doc.setFont('helvetica', 'normal');
+    job.responsibilities.forEach((responsibility) => {
+      const responsibilityLines = doc.splitTextToSize(`• ${responsibility}`, 170);
+      doc.text(responsibilityLines, 20, yPosition);
+      yPosition += responsibilityLines.length * 4;
+    });
+    yPosition += 5;
   });
 
   yPosition += 10;
@@ -157,13 +215,51 @@ export const generateCV = () => {
   doc.text('EDUCATION', 20, yPosition);
   yPosition += 10;
 
+  const education = [
+    {
+      year: '2022 - Present',
+      institution: 'SLIIT UNIVERSITY',
+      qualification: 'BSc (Hons) in Information Technology specializing in Information Technology'
+    },
+    {
+      year: '2022 - 2024',
+      institution: 'SLIIT UNIVERSITY',
+      qualification: 'Higher Diploma in Information Technology'
+    },
+    {
+      year: '2020',
+      institution: 'EMBILIPITIYA PRESIDENT COLLEGE',
+      qualification: 'B,C,C (Maths)'
+    },
+    {
+      year: '2017',
+      institution: 'EMBILIPITIYA NATIONAL COLLEGE',
+      qualification: "7A's , B & C"
+    }
+  ];
+
   doc.setTextColor(...darkColor);
   doc.setFontSize(10);
-  doc.setFont('helvetica', 'bold');
-  doc.text('Software Engineering Student', 20, yPosition);
-  yPosition += 5;
-  doc.setFont('helvetica', 'normal');
-  doc.text('Currently pursuing studies in Software Engineering', 20, yPosition);
+
+  education.forEach((edu) => {
+    if (yPosition > 270) {
+      doc.addPage();
+      yPosition = 20;
+    }
+    
+    doc.setFont('helvetica', 'bold');
+    doc.text(edu.year, 20, yPosition);
+    yPosition += 5;
+    
+    doc.setFont('helvetica', 'bold');
+    doc.text(edu.institution, 20, yPosition);
+    yPosition += 5;
+    
+    doc.setFont('helvetica', 'normal');
+    const qualificationLines = doc.splitTextToSize(edu.qualification, 170);
+    doc.text(qualificationLines, 20, yPosition);
+    yPosition += qualificationLines.length * 4 + 5;
+  });
 
   return doc;
 };
