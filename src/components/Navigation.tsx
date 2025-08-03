@@ -7,11 +7,11 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");
 
   const navItems = [
-    { id: "home", label: "Home" },
+    { id: "hero", label: "Home" },
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
     { id: "services", label: "Services" },
-    { id: "portfolio", label: "Portfolio" },
+    { id: "projects", label: "Projects" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -52,19 +52,23 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            <a href="/" className="nav-link hover:scale-105 transition-transform">Home</a>
-            <a href="/about" className="nav-link hover:scale-105 transition-transform">About</a>
-            <a href="/skills" className="nav-link hover:scale-105 transition-transform">Skills</a>
-            <a href="/services" className="nav-link hover:scale-105 transition-transform">Services</a>
-            <a href="/projects" className="nav-link hover:scale-105 transition-transform">Projects</a>
-            <a href="/#contact" className="nav-link hover:scale-105 transition-transform" onClick={(e) => {
-              e.preventDefault();
-              if (window.location.pathname === '/') {
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              } else {
-                window.location.href = '/#contact';
-              }
-            }}>Contact</a>
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => {
+                  if (item.id === 'skills') {
+                    window.location.href = '/skills';
+                  } else {
+                    scrollToSection(item.id);
+                  }
+                }}
+                className={`nav-link hover:scale-105 transition-transform ${
+                  activeSection === item.id ? 'text-primary' : ''
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
 
           {/* Mobile Menu Button */}
@@ -79,20 +83,21 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden py-4 space-y-2">
-            <a href="/" className="nav-link-mobile">Home</a>
-            <a href="/about" className="nav-link-mobile">About</a>
-            <a href="/skills" className="nav-link-mobile">Skills</a>
-            <a href="/services" className="nav-link-mobile" onClick={() => setIsOpen(false)}>Services</a>
-            <a href="/projects" className="nav-link-mobile">Projects</a>
-            <a href="/#contact" className="nav-link-mobile" onClick={(e) => {
-              e.preventDefault();
-              setIsOpen(false);
-              if (window.location.pathname === '/') {
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              } else {
-                window.location.href = '/#contact';
-              }
-            }}>Contact</a>
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => {
+                  if (item.id === 'skills') {
+                    window.location.href = '/skills';
+                  } else {
+                    scrollToSection(item.id);
+                  }
+                }}
+                className="nav-link-mobile block text-left w-full"
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
         )}
       </div>

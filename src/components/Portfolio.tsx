@@ -102,7 +102,7 @@ const Portfolio = () => {
   const displayedProjects = showAll ? projects : projects.slice(0, 5);
 
   return (
-    <section id="portfolio" className="py-20">
+    <section id="projects" className="py-20 bg-secondary/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
