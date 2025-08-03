@@ -55,13 +55,7 @@ const Navigation = () => {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => {
-                  if (item.id === 'skills') {
-                    window.location.href = '/skills';
-                  } else {
-                    scrollToSection(item.id);
-                  }
-                }}
+                onClick={() => scrollToSection(item.id)}
                 className={`nav-link hover:scale-105 transition-transform ${
                   activeSection === item.id ? 'text-primary' : ''
                 }`}
@@ -86,13 +80,7 @@ const Navigation = () => {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => {
-                  if (item.id === 'skills') {
-                    window.location.href = '/skills';
-                  } else {
-                    scrollToSection(item.id);
-                  }
-                }}
+                onClick={() => scrollToSection(item.id)}
                 className="nav-link-mobile block text-left w-full"
               >
                 {item.label}
